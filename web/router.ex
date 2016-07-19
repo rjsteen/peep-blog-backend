@@ -19,6 +19,7 @@ defmodule PeepBlogBackend.Router do
     resources "/posts", PostController
   end
 
+  plug PlugCors, [origins: [System.get_env("FRONTEND_URL")]]
   # Other scopes may use custom stacks.
   # scope "/api", PeepBlogBackend do
   #   pipe_through :api
