@@ -38,6 +38,6 @@ defmodule PeepBlogBackend.Endpoint do
     key: "_peep_blog_backend_key",
     signing_salt: "+kSinAJD"
 
-  plug Corsica, [origins: ["http://localhost:4200"], allow_headers: ["accept", "content-type"]]
+  plug Corsica, [origins: [System.get_env("FRONTEND_URL")], allow_headers: ["accept", "content-type"]]
   plug PeepBlogBackend.Router
 end
